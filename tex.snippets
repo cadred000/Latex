@@ -11,73 +11,129 @@ def env(name):
 
 endglobal
 
-snippet homework "My homework template" b
-\documentclass[14pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[left=.5in,right=.5in,top=.5in,bottom=.5in]{geometry}
-\usepackage[english]{babel}
-\usepackage{amsmath}
+snippet notes "Notes Template" b
+\documentclass[12pt]{article}
+\usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{emumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage{setspace}
+\doublespacing
+\geometry{a4paper}
+
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{${1:Title}}
+
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{16pt}
+\begin{flushleft}
+  \textbf{\Large{\@title}}
+
+  \@author{}\\
+  \@date{}
+
+\end{flushleft}\egroup
+}
+\makeatother
+
+\title{$1}
 \author{Dan Gibson}
 \date{\today}
+
 \begin{document}
 \maketitle
-\newlist{questions}{enumerate}{2}
-\setlist[questions, 1]{label = \arabic{questionsi}.}
-\setlist[questions, 2]{label = \alph{questionsii}.}
-\begin{questions}
-	\item{$0}
-	$1
-\end{questions}
-\end{document}
-endsnippet
-
-snippet template "Simple document template" b
-\documentclass[14pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{amsmath, amssymbol, amsthm}
-\usepackage{graphicx}
-\usepackage{emumitem}
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\begin{document}
-\begin{center}
-	\textbf{\LARGE{${1:Title}}}
-	\today
-\end{center}
+\section{$2}
+\vspace{10pt}
 $0
 \end{document}
 endsnippet
 
-snippet template1 "Overleaf Homework Template" b
-\documentclass{homework}
-\usepackage{amsmath,amssymb,amsthm} % Math packages
+snippet start "Full Template" b
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\geometry{a4paper}
 
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+
+\pgfplotsset{width=8cm,compat=1.9}
+
+\doublespacing
+
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{16pt}
+\begin{flushleft}
+  \textbf{\Large{\@title}}
+
+  \@author{}\\
+  \@date{}
+
+\end{flushleft}\egroup
+}
+\makeatother
+
+\title{$1}
 \author{Dan Gibson}
-\class{INSERT CLASS}
 \date{\today}
-\title{INSERT TITLE}
-\address{INSERT ADDRESS}
-
-\graphicspath{{./media/}}
 
 \begin{document}
+
 \maketitle
-\question{$1}
-     $0
+
+\section{$2}
+\vspace{10pt}
+$0
+
 \end{document}
 endsnippet
 
-snippet template2 "Basic template" b
-\documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+snippet template "Basic template" b
+\documentclass[12pt]{article}
 \usepackage{textcomp}
-\usepackage[dutch]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath, amssymb}
 
 
@@ -95,7 +151,36 @@ snippet template2 "Basic template" b
 \pdfsuppresswarningpagegroup=1
 
 \begin{document}
+
 	$0
+
+\end{document}
+endsnippet
+
+snippet homework "Homework template" b
+\documentclass[12pt]{article}
+\usepackage{textcomp}
+\usepackage[left=.5in, right=.5in, top=.5in, bottom=.5in]{geometry}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\pdfsuppresswarningpagegroup=1
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\title{$1}
+\author{Dan Gibson}
+\date{\today}
+\begin{document}
+\doublespacing
+\maketitle
+\newlist{questions}{enumerate}{2}
+\setlist[questions, 1]{label = \arabic{questionsi}.}
+\setlist[questions, 2]{label = \alph{questionsii}.}
+\begin{questions}
+\item{$2}
+$0
+\end{questions}
 \end{document}
 endsnippet
 
@@ -105,9 +190,27 @@ snippet beg "begin{} / end{}" bA
 \\end{$1}
 endsnippet
 
+snippet space "add space" b
+\vspace{10pt} 
+$0
+endsnippet
+
+context math()
+snippet vec "vector" iA
+\vec{$1}$0
+endsnippet
+
+snippet binom "binomial" iA
+\binom{$1}{$2}$0
+endsnippet
+
 priority 100
-snippet ... "ldots" iA
-\ldots
+snippet ... "cdots" iA
++ \cdots + $0
+endsnippet
+
+snippet box "orange box" bA
+\orangebox{$1}$0
 endsnippet
 
 snippet table "Table environment" b
@@ -166,7 +269,7 @@ snippet iff "iff" Ai
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+$ ${1} $`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
 else:
@@ -176,13 +279,13 @@ endsnippet
 
 snippet dm "Math" wA
 \[
-${1:${VISUAL}}
+ ${1:${VISUAL}}
 \] $0
 endsnippet
 
 snippet ali "Align" bA
 \begin{align*}
-	${1:${VISUAL}}	
+	${1:${VISUAL}}
 \end{align*}
 endsnippet
 
@@ -587,7 +690,7 @@ snippet inn "in " iA
 endsnippet
 
 snippet NN "n" iA
-\N
+\mathbb{B}
 endsnippet
 
 snippet Nn "cap" iA
@@ -611,15 +714,15 @@ snippet OO "emptyset" iA
 endsnippet
 
 snippet RR "real" iA
-\R
+\mathbb{R}
 endsnippet
 
 snippet QQ "Q" iA
-\Q
+\mathbb{Q}
 endsnippet
 
 snippet ZZ "Z" iA
-\Z
+\mathbb{Z}
 endsnippet
 
 snippet <! "normal" iA
