@@ -160,6 +160,8 @@ endsnippet
 snippet homework "Homework template" b
 \documentclass[12pt]{article}
 \usepackage{textcomp}
+\usepackage{float}
+\usepackage{bm}
 \usepackage[left=.5in, right=.5in, top=.5in, bottom=.5in]{geometry}
 \usepackage[english]{babel}
 \usepackage{amsmath,amsthm, amssymb, mathtools}
@@ -200,6 +202,11 @@ snippet vec "vector" iA
 \vec{$1}$0
 endsnippet
 
+context math()
+snippet text "text" iA
+\text{$1}$0
+endsnippet
+
 snippet binom "binomial" iA
 \binom{$1}{$2}$0
 endsnippet
@@ -224,12 +231,12 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
-snippet fig "Figure environment" b
-\begin{figure}[${1:htpb}]
+snippet figure "Figure environment" b
+\begin{figure}[H]
 	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
-	\caption{${4:$3}}
-	\label{fig:${5:${3/\W+/-/g}}}
+	\caption{$1}
+	\includegraphics[width=0.8\textwidth]{$2}
+	\label{fig:${2/\W+/-/g}}
 \end{figure}
 endsnippet
 
@@ -239,10 +246,8 @@ snippet enum "Enumerate" bA
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" bA
-\begin{itemize}
-	\item $0
-\end{itemize}
+snippet item "New Item" bA
+\item{$1}$0
 endsnippet
 
 snippet desc "Description" b
