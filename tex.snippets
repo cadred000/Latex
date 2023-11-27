@@ -11,6 +11,21 @@ def env(name):
 
 endglobal
 
+snippet cover "Cover Letter Template" b
+\documentclass{letter}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\name{Dan Gibson}
+\address{Dan Gibson \\\\Email: \href{mailto:cadred000@pm.me}{cadred000@pm.me}}
+\begin{document}
+\begin{letter}{$1 \\\\ $2}
+\opening{$3}
+$0
+\closing{Best regards,}
+\end{letter}
+\end{document}
+endsnippet
+
 snippet notes "Notes Template" b
 \documentclass[12pt]{article}
 \usepackage{geometry}
@@ -170,19 +185,50 @@ snippet homework "Homework template" b
 \usepackage{setspace}
 \pdfsuppresswarningpagegroup=1
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\title{$1 \\\\ $2}
+\author{Dan Gibson}
+\date{\today}
+\begin{document}
+\doublespacing
+\begin{titlepage}
+\vspace*{\fill}
+\maketitle
+\vspace*{\fill}
+\end{titlepage}
+\newpage
+\newlist{questions}{enumerate}{2}
+\setlist[questions, 1]{label = \arabic{questionsi}.}
+\setlist[questions, 2]{label = \alph{questionsii}.}
+\begin{questions}
+\item{$3}
+$0
+\end{questions}
+\end{document}
+endsnippet
+
+snippet document "Document" b
+\documentclass[12pt]{article}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{bm}
+\usepackage[left=.5in, right=.5in, top=.5in, bottom=.5in]{geometry}
+\usepackage{amsmath,amsthm, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\pdfsuppresswarningpagegroup=1
 \title{$1}
 \author{Dan Gibson}
 \date{\today}
 \begin{document}
 \doublespacing
+\begin{titlepage}
+\vspace*{\fill}
 \maketitle
-\newlist{questions}{enumerate}{2}
-\setlist[questions, 1]{label = \arabic{questionsi}.}
-\setlist[questions, 2]{label = \alph{questionsii}.}
-\begin{questions}
-\item{$2}
+\vspace*{\fill}
+\end{titlepage}
+\newpage
 $0
-\end{questions}
 \end{document}
 endsnippet
 
@@ -231,7 +277,7 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
-snippet figure "Figure environment" b
+snippet fi "Figure environment" b
 \begin{figure}[H]
 	\centering
 	\caption{$1}
