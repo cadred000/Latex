@@ -16,7 +16,7 @@ snippet cover "Cover Letter Template" b
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \name{Dan Gibson}
-\address{Dan Gibson \\\\Email: \href{mailto:cadred000@pm.me}{cadred000@pm.me}}
+\address{Dan Gibson \\\\Email: \href{mailto:dggibso1@asu.edu}{dggibso1@asu.edu}}
 \begin{document}
 \begin{letter}{$1 \\\\ $2}
 \opening{$3}
@@ -190,11 +190,7 @@ snippet homework "Homework template" b
 \date{\today}
 \begin{document}
 \doublespacing
-\begin{titlepage}
-\vspace*{\fill}
 \maketitle
-\vspace*{\fill}
-\end{titlepage}
 \newpage
 \newlist{questions}{enumerate}{2}
 \setlist[questions, 1]{label = \arabic{questionsi}.}
@@ -277,8 +273,8 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
-snippet fi "Figure environment" b
-\begin{figure}[H]
+snippet figure "Figure environment" b
+\begin{figure}[!htb]
 	\centering
 	\caption{$1}
 	\includegraphics[width=0.8\textwidth]{$2}
