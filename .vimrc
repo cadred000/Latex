@@ -10,6 +10,7 @@ set laststatus=2
 setlocal spell
 set spelllang=en_us
 set ruler
+set dictionary=
 
 augroup LaTeX
   autocmd!
@@ -34,9 +35,8 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 autocmd FileType c ClangFormatAutoEnable
 
-autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 autoindent
-
 call plug#begin('~/.vim/plugged')
+Plug 'jiangmiao/auto-pairs'
 Plug 'rhysd/vim-clang-format'
 Plug 'morhetz/gruvbox'
 let g:clang_format#style_options = {
