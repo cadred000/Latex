@@ -15,160 +15,19 @@ snippet cover "Cover Letter Template" b
 \documentclass{letter}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{setspace}
 \name{Dan Gibson}
-\address{Dan Gibson \\\\Email: \href{mailto:dggibso1@asu.edu}{dggibso1@asu.edu}}
+\address{Dan Gibson \\\\ 45011 N. 14Th St. \\\\ New River, AZ 85087 \\\\ Phone: (623) 451-6887 \\\\ Email: dggibso1@asu.edu}
 \begin{document}
+\doublespacing
 \begin{letter}{$1 \\\\ $2}
-\opening{$3}
-$0
+\opening{Dear $3 Recruitment Team,}
+\par I am writing to express my interest in the $4 position. With a background in mathematics, computer programming and data science, I am excited about the opportunity to contribute to your company and help achieve its goals.
+\par In my previous research position with the National Data Mine Network, I developed skills in the data science field while working on a project with one of their corporate partners. Specifically, I worked with Python libraries such as PySpark and PyTorch to perform sentiment analysis on call center data. While learning about the data science industry, I also gained invaluable experience in collaborating with a team to achieve a common goal. My time with the Data Mine also allowed me to develop technical expertise in addition to what I gained during my ongoing education.
+\par I am a current ASU student that is on track to graduate in August of 2024 with a Applied Mathematics B.S. and a minor in Applied Computing. During the course of my studies, I was trained in statistics, linear algebra, advanced calculus, mathematical modeling and Fourier analysis. My programming classes allowed me to become proficient in multiple languages, including Java, Python, C/C++ and SQl. To continue my educational goals, I have been accepted to the Robotics and Autonomous Systems M.S. program at ASU, which I will begin this fall. 
+\par I hope to be able to utilize my knowledge of mathematics, computer programming and engineering to succeed in the role of $0. Thank you for considering my application and I look forward to hearing from you soon.
 \closing{Best regards,}
 \end{letter}
-\end{document}
-endsnippet
-
-snippet notes "Notes Template" b
-\documentclass[12pt]{article}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{empheq}
-\usepackage{enumitem}
-\usepackage{mdframed}
-\usepackage{booktabs}
-\usepackage{lipsum}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{psfrag}
-\usepackage{pgfplots}
-\usepackage{bm}
-\usepackage{setspace}
-\doublespacing
-\geometry{a4paper}
-
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-
-\makeatletter
-\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{16pt}
-\begin{flushleft}
-  \textbf{\Large{\@title}}
-
-  \@author{}\\
-  \@date{}
-
-\end{flushleft}\egroup
-}
-\makeatother
-
-\title{$1}
-\author{Dan Gibson}
-\date{\today}
-
-\begin{document}
-\maketitle
-\section{$2}
-\vspace{10pt}
-$0
-\end{document}
-endsnippet
-
-snippet start "Full Template" b
-\documentclass[12pt]{article}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{empheq}
-\usepackage{setspace}
-\usepackage{enumitem}
-\usepackage{mdframed}
-\usepackage{booktabs}
-\usepackage{lipsum}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{psfrag}
-\usepackage{pgfplots}
-\usepackage{bm}
-\geometry{a4paper}
-
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-
-\definecolor{ocre}{RGB}{243,102,25}
-\definecolor{mygray}{RGB}{243,243,244}
-\definecolor{deepGreen}{RGB}{26,111,0}
-\definecolor{shallowGreen}{RGB}{235,255,255}
-\definecolor{deepBlue}{RGB}{61,124,222}
-\definecolor{shallowBlue}{RGB}{235,249,255}
-
-\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
-
-\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
-\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
-\theoremstyle{mytheoremstyle}
-\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
-\theoremstyle{mytheoremstyle}
-\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
-\theoremstyle{myproblemstyle}
-\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
-
-\pgfplotsset{width=8cm,compat=1.9}
-
-\doublespacing
-
-\makeatletter
-\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{16pt}
-\begin{flushleft}
-  \textbf{\Large{\@title}}
-
-  \@author{}\\
-  \@date{}
-
-\end{flushleft}\egroup
-}
-\makeatother
-
-\title{$1}
-\author{Dan Gibson}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-
-\section{$2}
-\vspace{10pt}
-$0
-
-\end{document}
-endsnippet
-
-
-snippet template "Basic template" b
-\documentclass[12pt]{article}
-\usepackage{textcomp}
-\usepackage[english]{babel}
-\usepackage{amsmath, amssymb}
-
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
-
-\begin{document}
-
-	$0
-
 \end{document}
 endsnippet
 
