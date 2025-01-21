@@ -73,17 +73,16 @@ snippet document "Document" b
 \usepackage{enumitem}
 \usepackage{setspace}
 \pdfsuppresswarningpagegroup=1
-\title{$1}
-\author{Dan Gibson}
-\date{\today}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 \begin{document}
-\doublespacing
-\begin{titlepage}
-\vspace*{\fill}
-\maketitle
-\vspace*{\fill}
-\end{titlepage}
-\newpage
+\newlist{questions}{enumerate}{2}
+\setlist[questions, 1]{label = \arabic{questionsi}.}
+\setlist[questions, 2]{label = \alph{questionsii}.}
+\hfill \textbf{$1} \hfill \null  \\\\
+$2 \\\\
+Gibson, Dan \\\\ 
+\today \\\\
+\rule{\textwidth}{1pt}
 $0
 \end{document}
 endsnippet
